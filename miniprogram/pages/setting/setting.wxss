@@ -1,0 +1,6 @@
+/* pages/setting/setting.wxss */
+page{
+  background-color: white;
+  text-align: center;
+  color: #f01548;
+}

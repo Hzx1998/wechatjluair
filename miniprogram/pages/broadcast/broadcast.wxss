@@ -1,0 +1,136 @@
+/* pages/broadcast/broadcast.wxss */
+/*导航栏*/
+.toptabbar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: white;
+  height: 45px;
+  padding-top: 2px;
+
+}
+.tabbuttonicon{
+  display:flex;
+  flex-direction: column;
+}
+.buttonicon{
+  width:25px;
+  height:25px;
+}
+.buttonname{
+  font-size: 10px; 
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #bfbfbf;
+}
+.active .buttonicon{
+    width: 28px;
+    height: 28px;
+}
+.active .buttonname{
+  color:#f01548;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/*滑动界面*/
+.rollbox{
+  height:100%;
+}
+
+/*底部全局导航栏*/
+.tabbarbox{
+  height:45px;
+  padding-top: 3px;
+  padding-bottom: 2px;
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.tabbarbutton{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.lbuttonicon{
+  width: 25px;
+  height: 25px;
+}
+.mbuttonicon{
+  width: 40px;
+  height: 40px;
+}
+.lbuttonnameA{
+  font-size: 10px;
+  text-align: center;
+  color: #f01548;
+}
+.checkedbutton{
+  color:#bfbfbf;
+}
+.lbuttonnameB{
+   font-size: 10px;
+  text-align: center;
+  color: #bfbfbf;
+}
+.lbuttonnameC{
+   font-size: 10px;
+  text-align: center;
+  color: #bfbfbf;
+}
+
+page{
+  background-color: #e6e6e6;
+}
+
+
+
+
+
+/*模板样式*/
+.intro {
+
+  margin-top: 7px;
+}
+.titlebox{
+  font-size: 18px;
+   background-color: white;
+   color: #f01548;
+}
+.title{
+  margin-left:10px;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding:2px 10px 2px 10px;
+  background-color: #f01548;
+  display: inline;
+  color:white;
+  box-shadow: 2px 2px 2px #bfbfbf;
+}
+.container{
+   padding: 0 10px 0 10px;
+   font-size: 15px;
+    background-color: white;
+}
+.textbox{
+  display: flex;
+  flex-direction: row;
+  border-bottom: solid #e6e6e6 1px;
+  padding-top:5px;
+}
+.text{
+   width: 450rpx;
+     word-break:break-all;
+}
+.tel{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #f01548;
+  
+}
+.picture{
+  margin:10px;
+  width: 200rpx;
+  box-shadow: 5px 5px 5px #e6e6e6 ;
+}

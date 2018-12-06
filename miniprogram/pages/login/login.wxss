@@ -1,0 +1,27 @@
+/* pages/login/login.wxss */
+page{
+  background-color:white;
+}
+
+.loginbox{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 600rpx;
+}
+.head{
+   align-self: center;
+   width: 250rpx;
+   height: 250rpx;
+}
+.slogan{
+  text-align: center;
+  font-size: 15px;
+  color: #bfbfbf;
+  
+}
+.login{
+  border-radius: 0;
+  background-color: #f01548;
+  color: white;
+}

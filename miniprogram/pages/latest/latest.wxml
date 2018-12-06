@@ -1,0 +1,21 @@
+<!--pages/latest/latest.wxml-->
+     <scroll-view class='rollbox' scroll-y="true" upper-threshold="50" lower-threshold="100" bindscrolltolower="scrolltolower">
+     
+        <view class="intro"  bindlongpress='deleteAir' scroll-x="true"    wx:for='{{list}}' data-id="{{item.id}}" data-openId="{{item.openId}}">
+        <view  wx:if='{{item.status==1}}'>
+          <view  class='titlebox'>
+            <view class='title'>
+               {{item.title}}
+            </view>
+          </view>
+          <view class='container'>
+            <view class='textbox'>
+              <image class='picture' bindtap='preview' wx:if='{{item.imgUrl}}' src='{{item.imgUrl}}' mode='widthFix'></image>
+              <text class='text'>{{item.content}}</text>
+            </view>
+
+          </view>
+          </view>
+        </view>
+     
+    </scroll-view>

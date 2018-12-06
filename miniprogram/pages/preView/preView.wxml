@@ -1,0 +1,17 @@
+<!--pages/preView/preView.wxml-->
+<view class='viewBox'>
+<view class='contentbox'>{{Air.content}}
+<view class='imagebox' wx:if="{{Air.imgUrl}}" ><image class='image' src='{{Air.imgUrl}}' mode='widthFix'   bindtap='preview'></image></view></view>
+<view class='contact' >联系方式：
+              <text wx:if='{{Air.contact_type==0}}'>QQ>></text>
+              <text wx:if='{{Air.contact_type==1}}'>微信>></text>
+              <text wx:if='{{Air.contact_type==2}}'>电话>></text>
+              <text wx:if='{{Air.contact_type==3}}'>邮箱>></text>
+{{Air.contact_item}} <view class='copy' bindtap='copy'>点击复制</view></view>
+
+</view>
+<view class='sharebox'>
+
+<image src='../../image/home.png' class='home' bindtap='gohome'></image>
+<button class='share' bindtap='share' open-type='share'>点击分享</button>
+</view>
