@@ -1,4 +1,0 @@
-<!--pages/setting/setting.wxml-->
-<view wx:if="{{app.globalData.setting==1}}">功能施工中尚未开放...</view>
-<view wx:if="{{app.globalData.setting==2}}">功能施工中尚未开放...</view>
-

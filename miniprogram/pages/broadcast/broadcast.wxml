@@ -36,28 +36,7 @@
   <swiper-item>
     <scroll-view class='rollbox' scroll-y="true" upper-threshold="50" lower-threshold="100" bindscrolltolower="scrolltolower">
 
-      <view class="intro" wx:for='{{list}}' bindtap='previewair' data-id='{{item.id}}' data-title='{{item.title}}'>
-        <view wx:if='{{item.variety==2&&item.status==1}}'>
-          <view class='titlebox'>
-            <view class='title'>
-              {{item.title}}
-            </view>
-          </view>
-          <view class='container'>
-            <view class='textbox'>
-              <image class='picture' wx:if='{{item.imgUrl}}' src='{{item.imgUrl}}' mode='widthFix'></image>
-              <text class='text'>{{item.content}}</text>
-            </view>
-            <view class='tel' wx:if='{{item.contact_item}}'>
-              联系方式:
-              <text wx:if='{{item.contact_type==0}}'>QQ>></text>
-              <text wx:if='{{item.contact_type==1}}'>微信>></text>
-              <text wx:if='{{item.contact_type==2}}'>电话>></text>
-              <text wx:if='{{item.contact_type==3}}'>邮箱>></text> {{item.contact_item}}
-            </view>
-          </view>
-        </view>
-      </view>
+
 
     </scroll-view>
   </swiper-item>
@@ -65,28 +44,7 @@
   <swiper-item>
     <scroll-view class='rollbox' scroll-y="true" upper-threshold="50" lower-threshold="100" bindscrolltolower="scrolltolower">
 
-      <view class="intro" wx:for='{{list}}' bindtap='previewair'  data-id='{{item.id}}' data-title='{{item.title}}'>
-        <view wx:if='{{item.variety==3&&item.status==1}}'>
-          <view class='titlebox'>
-            <view class='title'>
-              {{item.title}}
-            </view>
-          </view>
-          <view class='container'>
-            <view class='textbox'>
-              <image class='picture'  wx:if='{{item.imgUrl}}' src='{{item.imgUrl}}' mode='widthFix'></image>
-              <text class='text'>{{item.content}}</text>
-            </view>
-            <view class='tel'  wx:if='{{item.contact_item}}'>
-              联系方式:
-              <text wx:if='{{item.contact_type==0}}'>QQ>></text>
-              <text wx:if='{{item.contact_type==1}}'>微信>></text>
-              <text wx:if='{{item.contact_type==2}}'>电话>></text>
-              <text wx:if='{{item.contact_type==3}}'>邮箱>></text> {{item.contact_item}}
-            </view>
-          </view>
-        </view>
-      </view>
+
 
     </scroll-view>
   </swiper-item>
@@ -94,28 +52,6 @@
   <swiper-item>
     <scroll-view class='rollbox' scroll-y="true" upper-threshold="50" lower-threshold="100" bindscrolltolower="scrolltolower">
 
-      <view class="intro" wx:for='{{list}}' bindtap='previewair' data-id="{{item.id}}" data-title='{{item.title}}'>
-        <view wx:if='{{item.variety==4&&item.status==1}}'>
-          <view class='titlebox'>
-            <view class='title'>
-              {{item.title}}
-            </view>
-          </view>
-          <view class='container'>
-            <view class='textbox'>
-              <image class='picture'  wx:if='{{item.imgUrl}}' src='{{item.imgUrl}}' mode='widthFix'></image>
-              <text class='text'>{{item.content}}</text>
-            </view>
-            <view class='tel'  wx:if='{{item.contact_item}}'>
-              联系方式:
-              <text wx:if='{{item.contact_type==0}}'>QQ>></text>
-              <text wx:if='{{item.contact_type==1}}'>微信>></text>
-              <text wx:if='{{item.contact_type==2}}'>电话>></text>
-              <text wx:if='{{item.contact_type==3}}'>邮箱>></text> {{item.contact_item}}
-            </view>
-          </view>
-        </view>
-      </view>
 
     </scroll-view>
   </swiper-item>
@@ -123,28 +59,7 @@
   <swiper-item>
     <scroll-view class='rollbox' scroll-y="true" upper-threshold="50" lower-threshold="100" bindscrolltolower="scrolltolower">
 
-      <view class="intro" wx:for='{{list}}' bindtap='previewair' data-id="{{item.id}}" data-title='{{item.title}}'>
-        <view wx:if='{{item.variety==5&&item.status==1}}'>
-          <view class='titlebox'>
-            <view class='title'>
-              {{item.title}}
-            </view>
-          </view>
-          <view class='container'>
-            <view class='textbox'>
-              <image class='picture'  wx:if='{{item.imgUrl}}' src='{{item.imgUrl}}' mode='widthFix'></image>
-              <text class='text'>{{item.content}}</text>
-            </view>
-            <view class='tel'  wx:if='{{item.contact_item}}'>
-              联系方式:
-              <text wx:if='{{item.contact_type==0}}'>QQ>></text>
-              <text wx:if='{{item.contact_type==1}}'>微信>></text>
-              <text wx:if='{{item.contact_type==2}}'>电话>></text>
-              <text wx:if='{{item.contact_type==3}}'>邮箱>></text> {{item.contact_item}}
-            </view>
-          </view>
-        </view>
-      </view>
+
 
     </scroll-view>
   </swiper-item>
@@ -152,28 +67,6 @@
   <swiper-item>
     <scroll-view class='rollbox' scroll-y="true" upper-threshold="50" lower-threshold="100" bindscrolltolower="scrolltolower">
 
-      <view class="intro" wx:for='{{list}}' bindtap='previewair' data-id='{{item.id}}' data-title='{{item.title}}'>
-        <view wx:if='{{item.variety==1&&item.status==1}}'>
-          <view class='titlebox'>
-            <view class='title'>
-              {{item.title}}
-            </view>
-          </view>
-          <view class='container'>
-            <view class='textbox'>
-              <image class='picture'  wx:if='{{item.imgUrl}}' src='{{item.imgUrl}}' mode='widthFix'></image>
-              <text class='text'>{{item.content}}</text>
-            </view>
-            <view class='tel' wx:if='{{item.contact_item}}' >
-              联系方式:
-              <text wx:if='{{item.contact_type==0}}'>QQ>></text>
-              <text wx:if='{{item.contact_type==1}}'>微信>></text>
-              <text wx:if='{{item.contact_type==2}}'>电话>></text>
-              <text wx:if='{{item.contact_type==3}}'>邮箱>></text> {{item.contact_item}}
-            </view>
-          </view>
-        </view>
-      </view>
 
     </scroll-view>
   </swiper-item>
