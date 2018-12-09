@@ -1,0 +1,41 @@
+#box {
+  width: 100%;
+}
+
+/*各部分标题*/
+
+.text {
+  display: block;
+  width: 70px;
+  text-align: center;
+  font-size: 16px;
+  color: white;
+  background-color: #f01548;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  box-shadow: 1px 1px 2px #bfbfbf;
+}
+
+/*种类设定*/
+
+.typebox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #f01548;
+  border-bottom: 1px solid #f01548;
+  width: inherit;
+}
+
+.type {
+  display: inline-block;
+  width: 150rpx;
+  height: 20px;
+  padding: 5px 0 5px 0;
+  font-size: 18px;
+  text-align: center;
+  color: white;
+}
+.active{
+     border-bottom: 3px solid white;
+}

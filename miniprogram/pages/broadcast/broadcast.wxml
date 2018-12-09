@@ -32,7 +32,7 @@
   </view>
 </view>
 <!--tabbar相连页面-->
-<swiper current='{{currentTab}}' class='swibox' duration='30' style='height:{{winHeight-97}}px' bindchange='rollChange'>
+<swiper current='{{currentTab}}' class='swibox' duration='30' style='height:{{winHeight-47}}px' bindchange='rollChange'>
   <swiper-item>
     <scroll-view class='rollbox' scroll-y="true" upper-threshold="50" lower-threshold="100" bindscrolltolower="scrolltolower">
 
@@ -67,7 +67,7 @@
   <swiper-item>
     <scroll-view class='rollbox' scroll-y="true" upper-threshold="50" lower-threshold="100" bindscrolltolower="scrolltolower">
 
-
+      <navigator id='egg' url='#'><image src='../../images/prepare.png'></image> </navigator>
     </scroll-view>
   </swiper-item>
 </swiper>

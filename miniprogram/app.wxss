@@ -1,5 +1,4 @@
 /**app.wxss**/
 page{
-  background-color: #eee;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }

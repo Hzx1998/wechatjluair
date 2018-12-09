@@ -4,9 +4,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+         type:["启事","活动","二手","代取"],
+         switchtap:0
+       
   },
-
+bindswitch:function(e){
+       var that=this;
+       console.log(e)
+       if(that.data.switchtap==e.currentTarget.dataset.type)
+       {
+         return false;
+       }else{
+         that.setData({
+            switchtap: e.currentTarget.dataset.type
+         })
+       }
+       
+},
   /**
    * 生命周期函数--监听页面加载
    */
@@ -62,4 +76,5 @@ Page({
   onShareAppMessage: function () {
     
   }
+
 })

@@ -12,7 +12,7 @@ Page({
                      { preicon: "icon1/preactivity.png", icon: "icon1/activity.png", name: "活动" },
                      { preicon: "icon1/prestand.png", icon: "icon1/stand.png", name: "二手" }, 
                      { preicon: "icon1/preexpress.png", icon: "icon1/express.png", name: "代取" },
-                     { preicon: "icon1/preothers.png",icon:"icon1/others.png",name:"其他"}],
+                     { preicon: "icon1/preothers.png",icon:"icon1/others.png",name:"待开发"}],
      tabbarlist:[{preicon:"../../images/icon/broadcast.png",icon:"../../images/icon/sbroadcast.png",name:"广播站"},
        { preicon: "../../images/icon/first.png", icon: "../../images/icon/sfirst.png", name: "发布" },
        { preicon: "../../images/icon/mine.png", icon: "../../images/icon/smine.png", name: "我的" }
@@ -26,7 +26,14 @@ Page({
   
   onLoad: function (options) {
     //获取系统信息
-   
+    wx.cloud.init();
+    wx.cloud.callFunction({
+      name: 'test',
+      complete: res => {
+        console.log('callFunction test result: ',res)
+      }
+    })
+
     var that = this;
    
     wx.getSystemInfo({

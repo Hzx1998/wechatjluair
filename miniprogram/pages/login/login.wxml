@@ -1,0 +1,3 @@
+<view id='loginbox'>
+<button id='login' open-type='getuserInfo' >点击登录</button>
+</view>

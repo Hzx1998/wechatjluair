@@ -1,0 +1,35 @@
+<view id='box'>
+<view class='typebox'>
+<view class="type {{switchtap==index?'active':''}}" wx:for="{{type}}" data-type="{{index}}" bindtap='bindswitch'>
+{{item}}
+</view>
+</view>
+<!--启事-->
+<form wx:if="{{switchtap==0}}">
+<text class='text'>标题</text>
+<text class='text'>内容</text>
+<text class='text'>联系方式</text>
+<text class='text'>添加照片</text>
+</form>
+
+<!--活动-->
+<form wx:if="{{switchtap==1}}">
+<text class='text'>活动海报</text>
+<text class='text'>活动地点</text>
+<text class='text'>活动时间</text>
+<text class='text'>详情</text>
+</form>
+<!--二手-->
+<form wx:if="{{switchtap==2}}">
+<text class='text'>交易名称</text>
+<text class='text'>交易描述</text>
+<text class='text'>联系方式</text>
+<text class='text'>物品照片</text>
+</form>
+<!--代取-->
+<form wx:if="{{switchtap==3}}">
+<text class='text'>代取种类</text>
+<text class='text'>描述</text>
+<text class='text'>联系方式</text>
+</form>
+</view>
