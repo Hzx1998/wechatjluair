@@ -1,0 +1,19 @@
+<view id='minebox'>
+  
+  <image id='setting' bindtap='jmpsetting' src='{{settingicon}}'></image>
+  <view id='avatarbox'>
+    <image id='avatar' src='{{avatarUrl}}'></image>
+  </view>
+  <view id='jmpbox'>
+  <view id='notice' data-current='0' bindtap='jmp'>启事管理</view>
+  <view id='activity' data-current='1' bindtap='jmp'>活动管理</view>
+  <view id='secondhand' data-current='2' bindtap='jmp'>二手管理</view>
+  <view id='express' data-current='3' bindtap='jmp'>代取管理</view>
+  </view>
+  <view id='switchbox'>
+    <view class='helpbox' bindtap='jmphelp'>
+      <image src='{{helpicon}}'></image>
+      <view class='help'>帮助</view>
+    </view>
+  </view>
+</view>

@@ -1,41 +1,105 @@
-#box {
-  width: 100%;
-}
-
-/*各部分标题*/
-
-.text {
-  display: block;
-  width: 70px;
-  text-align: center;
-  font-size: 16px;
-  color: white;
-  background-color: #f01548;
-  border-top-right-radius: 7px;
-  border-bottom-right-radius: 7px;
-  box-shadow: 1px 1px 2px #bfbfbf;
-}
-
 /*种类设定*/
 
 .typebox {
+  position: fixed;
+  top: 0;
+  z-index: 2;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   background-color: #f01548;
-  border-bottom: 1px solid #f01548;
-  width: inherit;
+  padding: 2px 0 0 0;
+  width: 750rpx;
+  border: hidden;
 }
 
 .type {
   display: inline-block;
-  width: 150rpx;
-  height: 20px;
-  padding: 5px 0 5px 0;
+  height: 25px;
   font-size: 18px;
   text-align: center;
   color: white;
+  padding-bottom: 5px;
 }
-.active{
-     border-bottom: 3px solid white;
+
+.active {
+  background-color: white;
+  color: #f01548;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
 }
+
+radio .wx-radio-input {
+  display: none;
+}
+
+.counter{
+        font-size: 12px;
+       color: #f01548;
+      display: flex;
+      flex-direction: row-reverse;
+}
+/*表单*/
+
+#formbox {
+  position: relative;
+  top: 32px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  width: 750rpx;
+}
+
+.textinput {
+  background-color: white;
+  padding: 15rpx;
+  margin: 20rpx;
+  border-radius: 15rpx;
+  box-shadow: 0 0 5px #bfbfbf inset;
+}
+
+.textinput textarea {
+  width: 100%;
+}
+
+.textinput button {
+  border: 1px solid white;
+  color: white;
+  background-color: #f01548;
+}
+
+.tagbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: inherit;
+}
+
+.tag radio {
+  border: 2px #bfbfbf dashed;
+  font-size: 15px;
+  color: #bfbfbf;
+  padding: 0 8px 0 8px;
+  border-radius: 15px;
+}
+
+.tag radio[checked] {
+  border: 2px #f01548 dashed;
+  color: #f01548;
+}
+
+.img {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+  box-shadow: 0px 0px  1px #bfbfbf;
+}
+
+.poster {
+  width: 750rpx;
+  height:385rpx;
+  border-bottom: 1px solid #e6e6e6;
+}
+

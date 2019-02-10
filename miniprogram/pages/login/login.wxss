@@ -5,4 +5,10 @@
     flex-direction: column;
     justify-content: space-around;
 }
+#login{
+      border:0px;
+      border-radius: 15rpx;
+      background-color:#f01548;
+      color: white;
+}
 

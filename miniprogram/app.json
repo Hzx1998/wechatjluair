@@ -1,18 +1,19 @@
 {
   "pages": [
-        "pages/login/login",
-    "pages/first/first",
     "pages/broadcast/broadcast",
-    "pages/latest/latest",
-
-    "pages/mine/mine",
-    
-    "pages/complete/complete",
-    "pages/setting/setting",
-    "pages/preView/preView"
+      "pages/mine/mine",
+    "pages/first/first",
+    "pages/login/login",
+    "pages/settings/settings",
+    "pages/help/help",
+    "pages/preView/preView",
+    "pages/notice/notice",
+    "pages/activity/activity",
+    "pages/secondhand/secondhand",
+    "pages/express/express"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#f01548",
+                    "navigationBarBackgroundColor": "#f01548",
     "navigationBarTextStyle": "white",
     "backgroundColor": "#eeeeee",
     "backgroundTextStyle": "light",
@@ -21,25 +22,25 @@
   "tabBar": {
     "color": "#bfbfbf",
     "selectedColor": "#f01548",
-    "list": [{
-      "pagePath": "pages/broadcast/broadcast",
-      "text": "广播站",
-      "iconPath": "images/icon/broadcast.png",
-      "selectedIconPath": "images/icon/sbroadcast.png"
-    },{
-      "pagePath": "pages/first/first",
-      "text": "发布",
-      "iconPath": "images/icon/first.png",
-      "selectedIconPath": "images/icon/sfirst.png"
-    },
-    {
-      "pagePath": "pages/mine/mine",
-      "text": "我的",
-      "iconPath": "images/icon/mine.png",
-      "selectedIconPath": "images/icon/smine.png"
-    }
-    
-    
+    "list": [
+      {
+        "pagePath": "pages/broadcast/broadcast",
+        "text": "广播站",
+        "iconPath": "images/icon/broadcast.png",
+        "selectedIconPath": "images/icon/sbroadcast.png"
+      },
+      {
+        "pagePath": "pages/first/first",
+        "text": "发布",
+        "iconPath": "images/icon/first.png",
+        "selectedIconPath": "images/icon/sfirst.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/icon/mine.png",
+        "selectedIconPath": "images/icon/smine.png"
+      }
     ]
   }
 }

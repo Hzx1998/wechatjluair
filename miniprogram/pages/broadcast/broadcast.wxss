@@ -1,54 +1,231 @@
 /* pages/broadcast/broadcast.wxss */
+
 /*导航栏*/
-.toptabbar{
+
+.toptabbar {
+  position: sticky;
+  top: 0px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  background-color:#f01548;
+  background-color: #f01548;
   height: 45px;
   padding-top: 2px;
- 
+  border: hidden;
+  z-index: 2;
 }
-.tabbuttonicon{
-  display:flex;
+
+.tabbuttonicon {
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  padding-top: 2px;
 }
-.buttonicon{
-  width:25px;
-  height:25px;
+
+.buttonicon {
+  width: 25px;
+  height: 25px;
 }
-.buttonname{
-  font-size: 10px; 
+
+.buttonname {
+  font-size: 10px;
   text-align: center;
   color: white;
 }
-.active{
-    background-color: white;
-    padding: 2px 8px 0 8px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-}
-.active .buttonicon{
-    width: 28px;
-    height: 28px;
-}
-.active .buttonname{
-  color:#f01548;
-}
-/*滑动界面*/
-.rollbox{
-  height:100%;
+
+.active {
+  background-color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
-#egg{
+.active .buttonname {
+  color: #f01548;
+}
+
+/*滑动界面*/
+
+.rollbox {
+  height: 100%;
+  background-color: white;
+}
+
+#egg {
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+#egg image {
+  width: 237px;
+  height: 60px;
 }
-#egg image{
-       position: fixed;
-       left: 150rpx;
-       top: 300rpx;
-       width: 237px;
-       height: 60px;
+
+/*加载动画*/
+
+.loadingbox {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.loading {
+  width: 32px;
+  height: 32px;
+}
+
+/*启事*/
+
+.noticebox {
+  padding-top: 10px;
+  border-bottom: 4px #e6e6e6 solid;
+}
+
+.ntbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 25px;
+}
+
+.ntag {
+  width: 60px;
+  margin-left: 5px;
+  font-size: 15px;
+  color: white;
+  text-align: center;
+  background-color: #f01548;
+  border: 1px solid #f01548;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.ntitle {
+  border-bottom: 2px #f01548 solid;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #f01548;
+  text-align: center;
+  font-size: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ndiscription {
+  font-size: 16px;
+  margin: 10px 15px 15px 15px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.nimgbox {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.nimg {
+  background-color: #e6e6e6;
+  height: 64px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  box-shadow: 0 0 2px #bfbfbf;
+}
+
+.nimg image {
+  width: 64px;
+  height: 64px;
+}
+
+/*加载更多*/
+
+.loadingmore {
+  color: #f01548;
+  background-color: #e6e6e6;
+  font-size: 12px;
+  height: 20px;
+  width: 750rpx;
+  text-align: center;
+  padding: 4px;
+}
+
+/*活动*/
+
+.activitybox {
+  width: 730rpx;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0px 0px 5px #9f9f9f;
+  margin: 15rpx 10rpx 15rpx 10rpx;
+}
+
+.aimgbox {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #e6e6e6;
+  width: 100%;
+  height: 422rpx;
+}
+
+.aimgbox image {
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 5px #bfbfbf inset;
+}
+
+.atitle {
+  padding: 10px;
+  background-color: #e6e6e6;
+  color: black;
+  font-size: 18px;
+  opacity: 0.5;
+}
+
+.asociety {
+  font-size: 12px;
+  text-align: right;
+}
+
+/*代取*/
+
+.expressbox {
+  display: flex;
+  font-size: 16px;
+  flex-direction: row;
+  margin: 20rpx;
+  padding: 30rpx 0 30rpx 0;
+  background-color: white;
+  border-bottom: 1px solid #e6e6e6;
+}
+.stage{
+   width: 25px;
+   height: 25px;
+}
+.destination {
+  width: 500rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 15px;
+  border-top: 2px #f01548 dashed;
+}
+.bcontact{
+    display: flex;
+    align-self: center;
+      color: white;
+      background-color: #f01548;
+      font-size: 12px;
+      padding:5px;
+      border-radius: 10px;
+}
+

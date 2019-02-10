@@ -1,0 +1,12 @@
+<view  id='noticebox' wx:if='{{current==0}}'>
+<view>{{data.title}}</view>
+<view>{{data.discription}}</view>
+<view></view>
+</view>
+<view id='activitybox' wx:if='{{current==1}}'>
+2222
+</view>
+<view id='secondhandbox' wx:if='{{current==2}}'>
+
+
+</view>

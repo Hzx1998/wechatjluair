@@ -1,35 +1,114 @@
-<view id='box'>
 <view class='typebox'>
-<view class="type {{switchtap==index?'active':''}}" wx:for="{{type}}" data-type="{{index}}" bindtap='bindswitch'>
-{{item}}
+  <view class="type {{switchtap==index?'active':''}}" wx:for="{{type}}" data-type="{{index}}" bindtap='bindswitch' style='width:{{winWidth/5}}px'>
+    {{item}}
+  </view>
 </view>
-</view>
-<!--启事-->
-<form wx:if="{{switchtap==0}}">
-<text class='text'>标题</text>
-<text class='text'>内容</text>
-<text class='text'>联系方式</text>
-<text class='text'>添加照片</text>
-</form>
+<view id='formbox'>
+  <!--启事-->
+  <form wx:if="{{switchtap==0}}" bindsubmit='nSubmit' bindreset='formReset'>
+    <input name='title' value='{{nvalue.title}}' class='textinput' placeholder='标题'>
+    </input>
+    <radio-group class='tagbox' name='tag'>
+      <label class='tag' wx:for='{{noticetag}}'>
+        <radio value='{{item.value}}' checked='{{checked}}'>{{item.name}}</radio>
+      </label>
+    </radio-group>
+    <view class='textinput'>
+      <textarea name='discription' value='{{nvalue.discription}}' bindinput='inputnum' placeholder='描述' auto-focus='true' show-confirm-bar='' maxlength='256'>
+      </textarea>
+      <view class='counter'>{{currentlength}}/{{maxlength}}</view>
+      <view style="display:inline" wx:if='{{nimg>0}}' wx:for='{{tempFilespath}}'>
+        <image src='{{item}}' mode='aspectFill' class='img' bindtap='viewimg' bindlongtap='deleteimg' data-url='{{item}}'></image>
+      </view>
+      <image wx:if='{{nimg!=3}}' bindtap='bindaddimg' class='img' src='{{addimgIcon}}'>
+      </image>
+    </view>
+    <view class='textinput'>
+      <radio-group class='tagbox' name='contactway' style='padding-bottom:2px'>
+        <view style='color:#6f6f6f'>联系方式</view>
+        <label class='tag' wx:for='{{contact}}'>
+          <radio value='{{item.value}}' checked='{{item.checked}}'>{{item.name}}</radio>
+        </label>
+      </radio-group>
+      <input class='contact' name='contact' value='{{nvalue.contact}}' style='border-top:1px solid #e6e6e6 ;padding-top:2px' placeholder='输入'>
+      </input>
+    </view>
+    <view class='textinput'>
+      <button form-type='submit' plain='true'>
+        发布
+      </button>
+    </view>
+  </form>
 
-<!--活动-->
-<form wx:if="{{switchtap==1}}">
-<text class='text'>活动海报</text>
-<text class='text'>活动地点</text>
-<text class='text'>活动时间</text>
-<text class='text'>详情</text>
-</form>
-<!--二手-->
-<form wx:if="{{switchtap==2}}">
-<text class='text'>交易名称</text>
-<text class='text'>交易描述</text>
-<text class='text'>联系方式</text>
-<text class='text'>物品照片</text>
-</form>
-<!--代取-->
-<form wx:if="{{switchtap==3}}">
-<text class='text'>代取种类</text>
-<text class='text'>描述</text>
-<text class='text'>联系方式</text>
-</form>
+  <!--活动-->
+  <form wx:if="{{switchtap==1}}" bindsubmit='aSubmit'>
+    <image wx:if='{{nimg==1}}' class='poster' bindtap='viewimg' bindlongtap='deleteimg' mode='aspectFill' src='{{tempFilespath[0]}}' data-url='{{tempFilespath[0]}}'></image>
+    <image wx:if='{{nimg==0}}' class='poster' bindtap='bindaddposter' src='../../images/poster.png'>
+    </image>
+    <input name='title' value='{{avalue.title}}' class='textinput' placeholder='活动名称'></input>
+    <input name='society' value='{{avalue.title}}' class='textinput' placeholder='社团（组织）名称'></input>
+    <view class='textinput'>
+      <textarea name='discription' value='{{avalue.discription}}' placeholder='活动详情' bindinput='inputnum' show-confirm-bar='' maxlength='256'></textarea>
+      <view class='counter'>{{currentlength}}/{{maxlength}}</view>
+    </view>
+    
+    <view class='textinput'>
+      <button form-type='submit' plain='true'>
+        发布
+      </button>
+    </view>
+  </form>
+  <!--二手-->
+  <form wx:if="{{switchtap==2}}" bindsubmit='sSubmit'>
+    <input name='title' value='{{svalue.title}}' class='textinput' placeholder='物品名称'></input>
+    <input name='price' value='{{svalue.price}}' class='textinput' placeholder='价格(可私)/元' type='digit'></input>
+    <radio-group name='tag' class='tagbox'>
+      <label class='tag' wx:for='{{goodstag}}'>
+        <radio value='{{item.value}}' checked='{{checked}}'>{{item.name}}</radio>
+      </label>
+    </radio-group>
+    <view class='textinput'>
+      <textarea name='discription' value='{{svalue.discription}}' bindinput='inputnum' placeholder='描述和物品图片' show-confirm-bar='' maxlength='256'></textarea>
+      <view class='counter'>{{currentlength}}/{{maxlength}}</view>
+      <view style="display:inline" wx:if='{{nimg>0}}' wx:for='{{tempFilespath}}'>
+        <image src='{{item}}' mode='aspectFill' class='img' bindtap='viewimg' bindlongtap='deleteimg' data-url='{{item}}'></image>
+      </view>
+      <image wx:if='{{nimg<3}}' class='img' bindtap='bindaddimg' src='{{addimgIcon}}'>
+      </image>
+    </view>
+    <view class='textinput'>
+      <radio-group name='contactway' class='tagbox' style='padding-bottom:2px'>
+        <view style='color:#6f6f6f'>联系方式</view>
+        <label class='tag' wx:for='{{contact}}'>
+          <radio value='{{item.value}}' checked='{{item.checked}}'>{{item.name}}</radio>
+        </label>
+      </radio-group>
+      <input name='contact' value='{{svalue.contact}}' class='contact' style='border-top:1px solid #e6e6e6;padding-top:2px' placeholder='输入'>
+      </input>
+    </view>
+    <view class='textinput'>
+      <button form-type='submit' plain='true'>
+        发布
+      </button>
+    </view>
+  </form>
+  <!--代取-->
+  <form wx:if="{{switchtap==3}}" bindsubmit='bSubmit'>
+    <input class='textinput' name='destination' value='{{bvalue.destination}}' placeholder='快递点'></input>
+    <view class='textinput'>
+      <radio-group class='tagbox' name='contactway' style='padding-bottom:2px'>
+        <view style='color:#6f6f6f'>联系方式</view>
+        <label class='tag' wx:for='{{contact}}'>
+          <radio value='{{item.value}}' checked='{{item.checked}}'>{{item.name}}</radio>
+        </label>
+      </radio-group>
+      <input class='contact' name='contact' value='{{bvalue.contact}}' style='border-top:1px solid #e6e6e6 ;padding-top:2px' placeholder='输入'>
+      </input>
+    </view>
+    <view class='textinput'>
+      <button plain='true' form-type='submit'>
+        发布
+      </button>
+    </view>
+  </form>
 </view>

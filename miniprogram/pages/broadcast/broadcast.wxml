@@ -1,74 +1,109 @@
 <!--顶部tabbar-->
 <view class='toptabbar'>
-  <view class="tabbutton  {{currentTab==0?'active':''}}" data-current="0" bindtap="tabbar">
+  <view class="tabbutton  {{currentTab==0?'active':''}}" style="width:{{winWidth/6}}px" data-current="0" bindtap="tabbar">
     <view class='tabbuttonicon'>
       <image class='buttonicon ' src='{{currentTab==0?tabButtonlist[0].icon:tabButtonlist[0].preicon}}'></image>
     </view>
     <view class="buttonname">{{tabButtonlist[0].name}}</view>
   </view>
-  <view class="tabbutton {{currentTab==1?'active':''}}" data-current="1" bindtap="tabbar">
+  <view class="tabbutton {{currentTab==1?'active':''}}" style="width:{{winWidth/6}}px" data-current="1" bindtap="tabbar">
     <view class='tabbuttonicon'>
       <image class='buttonicon' src='{{currentTab==1?tabButtonlist[1].icon:tabButtonlist[1].preicon}}'></image>
     </view>
     <view class="buttonname">{{tabButtonlist[1].name}}</view>
   </view>
-  <view class="tabbutton {{currentTab==2?'active':''}}" data-current="2" bindtap="tabbar">
+  <view class="tabbutton {{currentTab==2?'active':''}}" style="width:{{winWidth/6}}px" data-current="2" bindtap="tabbar">
     <view class='tabbuttonicon'>
       <image class='buttonicon' src='{{currentTab==2?tabButtonlist[2].icon:tabButtonlist[2].preicon}}'></image>
     </view>
     <view class="buttonname">{{tabButtonlist[2].name}}</view>
   </view>
-  <view class="tabbutton {{currentTab==3?'active':''}}" data-current="3" bindtap="tabbar">
+  <view class="tabbutton {{currentTab==3?'active':''}}" style="width:{{winWidth/6}}px" data-current="3" bindtap="tabbar">
     <view class='tabbuttonicon'>
       <image class='buttonicon' src='{{currentTab==3?tabButtonlist[3].icon:tabButtonlist[3].preicon}}'></image>
     </view>
     <view class="buttonname">{{tabButtonlist[3].name}}</view>
   </view>
-  <view class="tabbutton {{currentTab==4?'active':''}}" data-current="4" bindtap="tabbar">
+  <view class="tabbutton {{currentTab==4?'active':''}}" style="width:{{winWidth/6}}px" data-current="4" bindtap="tabbar">
     <view class='tabbuttonicon'>
       <image class='buttonicon' src='{{currentTab==4?tabButtonlist[4].icon:tabButtonlist[4].preicon}}'></image>
     </view>
     <view class="buttonname">{{tabButtonlist[4].name}}</view>
   </view>
 </view>
+
+
+
+
 <!--tabbar相连页面-->
 <swiper current='{{currentTab}}' class='swibox' duration='30' style='height:{{winHeight-47}}px' bindchange='rollChange'>
+  <!--启事-->
   <swiper-item>
-    <scroll-view class='rollbox' scroll-y="true" upper-threshold="50" lower-threshold="100" bindscrolltolower="scrolltolower">
-
-
-
+    <scroll-view class='rollbox' scroll-y="true" upper-threshold="50" lower-threshold="100" bindscrolltolower="nscrolltolower">
+      <view class='loadingbox' wx:if='{{n}}'>
+        <image class='loading' src='./icon1/loading.gif'></image>
+      </view>
+      <view class='noticebox' wx:for='{{nlist}}' wx:if='{{!n}}' bindtap='preview' data-tap='{{currentTab}}' data-id='{{item._id}}'>
+        <view class='ntbox'>
+          <view class='ntag'>{{item.tag}}</view>
+          <view class='ntitle'>{{item.title}}</view>
+        </view>
+        <view class='ndiscription'>{{item.discription}}</view>
+        <view class='nimgbox'>
+          <view class='nimg' wx:for='{{item.fileID}}' data-imgurl='{{item}}' bindtap='previewimg'>
+            <image src='{{item}}' mode='aspectFill'></image>
+          </view>
+        </view>
+      </view>
+      <view class='loadingmore' wx:if='{{loading}}' bindtap='loadingmore'>点击加载更多</view>
     </scroll-view>
   </swiper-item>
-
+  <!--活动-->
   <swiper-item>
     <scroll-view class='rollbox' scroll-y="true" upper-threshold="50" lower-threshold="100" bindscrolltolower="scrolltolower">
-
-
-
+      <view class='loadingbox' wx:if='{{a}}'>
+        <image class='loading' src='./icon1/loading.gif'></image>
+      </view>
+      <view class='activitybox' wx:for='{{alist}}' bindtap='preview' data-tap='{{currentTab}}' data-id='{{item._id}}'>
+        <view class='aimgbox' wx:for='{{item.fileID}}'>
+          <image src='{{item}}' mode='aspectFill'></image>
+        </view>
+        <view class='atitle'>{{item.title}}
+          <view class='asociety'>举办组织：{{item.society}}</view>
+        </view>
+      </view>
     </scroll-view>
   </swiper-item>
-
+  <!--二手-->
   <swiper-item>
     <scroll-view class='rollbox' scroll-y="true" upper-threshold="50" lower-threshold="100" bindscrolltolower="scrolltolower">
-
-
+      <view class='loadingbox' wx:if='{{s}}'>
+        <image class='loading' src='./icon1/loading.gif'></image>
+      </view>
     </scroll-view>
   </swiper-item>
-
+  <!--代取-->
   <swiper-item>
     <scroll-view class='rollbox' scroll-y="true" upper-threshold="50" lower-threshold="100" bindscrolltolower="scrolltolower">
-
-
-
+      <view class='loadingbox' wx:if='{{b}}'>
+        <image class='loading' src='./icon1/loading.gif'></image>
+      </view>
+      <view class='expressbox' wx:for='{{blist}}'>
+      <view class='destinationbox'>
+      <image class='stage' src='./icon1/stage.png'></image>
+             <view class='destination'>{{item.destination}}</view>
+      </view>
+          <view class='bcontact' bindtap='bindcopy' data-contact='{{item.contact}}'>点击复制{{item.contactway}}</view>
+      </view>
     </scroll-view>
   </swiper-item>
-
+  <!--egg-->
   <swiper-item>
     <scroll-view class='rollbox' scroll-y="true" upper-threshold="50" lower-threshold="100" bindscrolltolower="scrolltolower">
 
-      <navigator id='egg' url='#'><image src='../../images/prepare.png'></image> </navigator>
+      <navigator id='egg' url='#'>
+        <image src='../../images/prepare.png'></image>
+      </navigator>
     </scroll-view>
   </swiper-item>
 </swiper>
-
