@@ -1,0 +1,198 @@
+page {
+  background-color: #f6f6f6;
+}
+
+/*启事*/
+
+#noticebox {
+  width: 700rpx;
+  padding: 25rpx;
+}
+
+.ntitle {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  padding-top: 40px;
+  border-bottom: 1px solid #bfbfbf;
+}
+
+.ndescription {
+  margin: 30rpx 30rpx 90rpx 30rpx;
+  line-height: 100%;
+  font-size: 18px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.nimgbox {
+  margin-bottom: 90rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.nimgbox image {
+  width: 180rpx;
+  height: 180rpx;
+  margin: 20rpx;
+}
+
+.ncontactbox {
+  margin: 30rpx;
+}
+
+.nwarning {
+  width: 100%;
+  font-size: 10px;
+  color: #bfbfbf;
+  text-align: center;
+}
+
+.ncontact {
+  position: relative;
+  right: 0px;
+  margin: 25rpx;
+  background-color: #f01548;
+  padding: 10rpx;
+  border-radius: 10rpx;
+  font-size: 15px;
+  color: white;
+  text-align: center;
+}
+
+/*活动*/
+
+#activitybox {
+  width: 750rpx;
+}
+
+.aimgbox {
+  width: 750rpx;
+}
+
+.aimgbox image {
+  width: 750rpx;
+}
+
+.acollectbox {
+  width: 45px;
+  height: 45px;
+  box-shadow: 0 0 5px #bfbfbf;
+  border-radius: 50%;
+  position: fixed;
+  right: 50rpx;
+  top: 50rpx;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.acollectbox image {
+  width: 40px;
+  height: 40px;
+}
+
+.acollectbox view {
+  font-size: 10px;
+  color: #f01548;
+}
+
+.acontentbox {
+  padding: 20px;
+  width: 750rpx;
+  font-size: 15px;
+}
+
+.adescription view {
+  word-break: break-all;
+  white-space: pre-wrap;
+}
+
+.asignup {
+  padding: 10rpx;
+  margin: 25rpx;
+  background-color: #f01548;
+  color: white;
+  text-align: center;
+  border-radius: 10rpx;
+}
+
+/*二手*/
+
+#secondhandbox {
+  width: 750rpx;
+}
+
+text {
+  color: #f01548;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.scollectbox {
+  width: 45px;
+  height: 45px;
+  box-shadow: 0 0 5px #bfbfbf;
+  border-radius: 50%;
+  position: fixed;
+  right: 50rpx;
+  top: 50rpx;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scollectbox image {
+  width: 40px;
+  height: 40px;
+}
+
+.sdescription {
+  padding: 25px 25px 0 25px;
+  font-size: 15px;
+}
+
+.simgbox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 25rpx;
+  width: 700rpx;
+}
+
+.simgbox image {
+  padding: 10rpx;
+}
+
+.simg0 {
+  width: 300rpx;
+  height: 225rpx;
+}
+
+.simg1 {
+  width: 300rpx;
+  height: 225rpx;
+}
+
+.simg2 {
+  height: 225rpx;
+  width: 620rpx;
+}
+
+.sprice {
+  padding: 0 25px 25px 25px;
+  font-weight: bold;
+}
+
+.scontact {
+  margin: 25rpx;
+  padding: 10rpx;
+  text-align: center;
+  background-color: #f01548;
+  border-radius: 10rpx;
+  color: white;
+}

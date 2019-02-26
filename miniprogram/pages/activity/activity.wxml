@@ -1,2 +1,25 @@
 <!--pages/activity/activity.wxml-->
-<text>pages/activity/activity.wxml</text>
+<view id='activitybox'>
+  <view id='namebox'>
+    <view class="{{switchtap==0?'active':'deactive'}}" data-switchtap='0' bindtap='switchtap'>我发布的</view>
+    <view class="{{switchtap==1?'active':'deactive'}}" data-switchtap='1' bindtap='switchtap'>我报名的</view>
+    <view class="{{switchtap==2?'active':'deactive'}}" data-switchtap='2' bindtap='switchtap'>我收藏的</view>
+  </view>
+  <view id='contentbox'>
+    <view class='activity' bindtap='preview' data-tap='1' data-id='{{item._id}}' wx:if='{{switchtap==0}}' wx:for='{{data}}' wx:key='_id'>
+      <view class='tag'>活动名称</view>
+      <view class='title'>{{item.title}}</view>
+      <view class='deletebutton' bindtap='deletea' data-id='{{item._id}}' data-index='{{index}}'>删除</view>
+    </view>
+    <view class='activity' bindtap='preview' data-tap='1' data-id='{{item.aid}}' wx:if='{{switchtap==1}}' wx:for='{{signup}}' wx:key='_id'>
+      <view class='tag'>活动名称</view>
+      <view class='title'>{{item.atitle}}</view>
+      <view class='deletebutton' bindtap='deleteas' data-id='{{item._id}}' data-index='{{index}}' data-aid='{{item.aid}}' style='font-size:12px;width:50px' >取消报名</view>
+    </view>
+    <view class='activity' bindtap='preview' data-tap='1' data-id='{{item.aid}}' wx:if='{{switchtap==2}}' wx:for='{{collect}}' wx:key='_id'>
+      <view class='tag'>活动名称</view>
+      <view class='title'>{{item.atitle}}</view>
+      <view class='deletebutton' bindtap='deleteac' data-id='{{item._id}}' data-index='{{index}}'>删除</view>
+    </view>
+  </view>
+</view>

@@ -1,2 +1,13 @@
 <!--pages/express/express.wxml-->
-<text>pages/express/express.wxml</text>
+<view id='expressbox'>
+  <view class='namebox'>
+    <view class='active'>我发布的</view>
+  </view>
+  <view id='contentbox'>
+    <view class='express' wx:for='{{data}}' wx:key='_id'>
+        <view class='tag'>快递点</view>
+        <view class='stand'>{{item.stand}}</view>
+            <view class='deletebutton' data-id='{{item._id}}'  data-index='{{index}}' bindtap='deleteexpress'>删除</view>
+    </view>
+  </view>
+</view>

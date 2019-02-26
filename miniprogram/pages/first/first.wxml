@@ -14,7 +14,7 @@
       </label>
     </radio-group>
     <view class='textinput'>
-      <textarea name='discription' value='{{nvalue.discription}}' bindinput='inputnum' placeholder='描述' auto-focus='true' show-confirm-bar='' maxlength='256'>
+      <textarea name='description' value='{{nvalue.description}}' bindinput='inputnum' placeholder='描述' auto-focus='true' show-confirm-bar='' maxlength='256'>
       </textarea>
       <view class='counter'>{{currentlength}}/{{maxlength}}</view>
       <view style="display:inline" wx:if='{{nimg>0}}' wx:for='{{tempFilespath}}'>
@@ -46,12 +46,16 @@
     <image wx:if='{{nimg==0}}' class='poster' bindtap='bindaddposter' src='../../images/poster.png'>
     </image>
     <input name='title' value='{{avalue.title}}' class='textinput' placeholder='活动名称'></input>
-    <input name='society' value='{{avalue.title}}' class='textinput' placeholder='社团（组织）名称'></input>
+    <input name='society' value='{{avalue.society}}' class='textinput' placeholder='社团（组织）名称'></input>
     <view class='textinput'>
-      <textarea name='discription' value='{{avalue.discription}}' placeholder='活动详情' bindinput='inputnum' show-confirm-bar='' maxlength='256'></textarea>
+      <textarea name='description' value='{{avalue.description}}' placeholder='活动详情' bindinput='inputnum' show-confirm-bar='' maxlength='256'></textarea>
       <view class='counter'>{{currentlength}}/{{maxlength}}</view>
     </view>
-    
+<view class='signupbox'>
+        <view>{{asignup?'点击关闭报名':'点击开启报名'}}</view>
+       <switch type='switch' color='#f01548' value='{{asignup}}' bindchange='allowsignup'></switch>
+</view>
+       <input  wx:if='{{asignup}}' type='number' name='numofpeople' value='{{avalue.numofpeople}}' class='textinput' placeholder='名额设置'></input>
     <view class='textinput'>
       <button form-type='submit' plain='true'>
         发布
@@ -68,7 +72,7 @@
       </label>
     </radio-group>
     <view class='textinput'>
-      <textarea name='discription' value='{{svalue.discription}}' bindinput='inputnum' placeholder='描述和物品图片' show-confirm-bar='' maxlength='256'></textarea>
+      <textarea name='description' value='{{svalue.description}}' bindinput='inputnum' placeholder='描述和物品图片' show-confirm-bar='' maxlength='256'></textarea>
       <view class='counter'>{{currentlength}}/{{maxlength}}</view>
       <view style="display:inline" wx:if='{{nimg>0}}' wx:for='{{tempFilespath}}'>
         <image src='{{item}}' mode='aspectFill' class='img' bindtap='viewimg' bindlongtap='deleteimg' data-url='{{item}}'></image>
@@ -94,7 +98,8 @@
   </form>
   <!--代取-->
   <form wx:if="{{switchtap==3}}" bindsubmit='bSubmit'>
-    <input class='textinput' name='destination' value='{{bvalue.destination}}' placeholder='快递点'></input>
+    <input class='textinput' name='stand' value='{{bvalue.stand}}' placeholder='快递点'></input>
+    <input class='textinput' name='destination' value='{{bvalue.destination}}' placeholder='收货点'></input>
     <view class='textinput'>
       <radio-group class='tagbox' name='contactway' style='padding-bottom:2px'>
         <view style='color:#6f6f6f'>联系方式</view>

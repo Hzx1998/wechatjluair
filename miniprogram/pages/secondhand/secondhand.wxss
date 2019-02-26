@@ -1,1 +1,62 @@
 /* pages/secondhand/secondhand.wxss */
+
+.namebox {
+  z-index: 2;
+  position: sticky;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #f01548;
+  color: white;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.active {
+  padding: 5px;
+  margin: 0 10px 0 10px;
+  background-color: white;
+  color: #f01548;
+  border-radius: 15px;
+  box-shadow: 0 0 5px #bfbfbf inset;
+}
+
+.deactive {
+  padding: 5px;
+  margin: 0 10px 0 10px;
+}
+
+.secondhand {
+  display: flex;
+  flex-direction: column;
+  width: 650rpx;
+  padding: 25px 50rpx 25px 50rpx;
+  border-bottom: 1px #bfbfbf solid;
+}
+
+.tag {
+  font-size: 18px;
+  font-weight: bold;
+  color: #f01548;
+}
+
+.title {
+  font-size: 15px;
+  margin-left: 30px;
+}
+
+.deletebutton {
+  z-index: 1;
+  display: inline-block;
+  position: relative;
+  bottom: 0px;
+  left: 550rpx;
+  font-size: 12px;
+  width: 40px;
+  text-align: center;
+  color: white;
+  padding: 2px 8px 2px 8px;
+  background-color: #f01548;
+  box-shadow: 0 0 5px #bfbfbf;
+  border-radius: 12px;
+}

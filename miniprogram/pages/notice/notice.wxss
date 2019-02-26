@@ -1,1 +1,52 @@
 /* pages/notice/notice.wxss */
+
+.mynoticebox {
+}
+
+.name {
+  position: sticky;
+  top: 0px;
+  z-index: 2;
+  background-color: #f01548;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+}
+
+.name text {
+  background-color: white;
+  color: #f01548;
+  padding: 5px;
+  border-radius: 15px;
+  box-shadow: 0 0 5px #bfbfbf inset;
+}
+/*内容*/
+.mynotice {
+  padding: 25px 50rpx 25px 50rpx;
+  width: 650rpx;
+  font-size: 15px;
+  border-bottom: 1px solid #bfbfbf;
+}
+.tag{
+    font-weight: bold;
+    font-size: 18px;
+    color: #f01548;
+}
+.title{
+  font-size: 15px;
+}
+.deletebutton {
+  z-index: 1;
+  display: inline-block;
+  position: relative;
+  bottom: 0px;
+  left: 550rpx;
+  font-size: 12px;
+  width: 40px;
+  text-align: center;
+  color: white;
+  padding: 2px 8px 2px 8px;
+  background-color: #f01548;
+  box-shadow: 0 0 5px #bfbfbf;
+  border-radius: 12px;
+}

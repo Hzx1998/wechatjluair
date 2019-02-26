@@ -1,4 +1,11 @@
 <!--pages/notice/notice.wxml-->
-<view class='statebox'>
-<view class='{{}}'></view>
+<view class='mynoticebox'>
+  <view class='name'>
+    <text>我发布的</text>
+  </view>
+  <view class='mynotice' wx:for='{{data}}' wx:key='_id' bindtap='preview' data-tap='0' data-id='{{item._id}}'>
+  <view class='tag'>{{item.tag}}</view>
+    <view class='title'>{{item.title}}</view>
+    <view class='deletebutton' data-fileid='{{item.fileID}}' data-id='{{item._id}}'  data-index='{{index}}' bindtap='deletenotice'>删除</view>
+  </view>
 </view>

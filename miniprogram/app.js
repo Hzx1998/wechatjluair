@@ -17,8 +17,7 @@ App({
       },
       fail: console.error
     })
-    wx.getSetting({
-      
+    wx.getSetting({      
       success(res) {
         if (res.authSetting['scope.userInfo'] || getApp().globalData.userInfo==null) {
           wx.getUserInfo({

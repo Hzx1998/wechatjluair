@@ -36,10 +36,10 @@
 
 
 <!--tabbar相连页面-->
-<swiper current='{{currentTab}}' class='swibox' duration='30' style='height:{{winHeight-47}}px' bindchange='rollChange'>
+<swiper current='{{currentTab}}' class='swibox' duration='30' circular='true' style='height:{{winHeight-47}}px' bindchange='rollChange'>
   <!--启事-->
   <swiper-item>
-    <scroll-view class='rollbox' scroll-y="true" upper-threshold="50" lower-threshold="100" bindscrolltolower="nscrolltolower">
+    <scroll-view class='rollbox' scroll-y="true" upper-threshold="50" bindscrolltoupper='bindrefresh'>
       <view class='loadingbox' wx:if='{{n}}'>
         <image class='loading' src='./icon1/loading.gif'></image>
       </view>
@@ -48,59 +48,75 @@
           <view class='ntag'>{{item.tag}}</view>
           <view class='ntitle'>{{item.title}}</view>
         </view>
-        <view class='ndiscription'>{{item.discription}}</view>
+        <view class='ndescription'>{{item.description}}</view>
         <view class='nimgbox'>
-          <view class='nimg' wx:for='{{item.fileID}}' data-imgurl='{{item}}' bindtap='previewimg'>
-            <image src='{{item}}' mode='aspectFill'></image>
+          <view class='nimg' wx:for='{{item.fileID}}'>
+            <image lazy-load='true' src='{{item}}' mode='aspectFill'></image>
           </view>
         </view>
       </view>
-      <view class='loadingmore' wx:if='{{loading}}' bindtap='loadingmore'>点击加载更多</view>
+      <view class='loadingmore' bindtap='loadingmore' wx:if='{{nloading}}'>点击加载更多</view>
     </scroll-view>
   </swiper-item>
   <!--活动-->
   <swiper-item>
-    <scroll-view class='rollbox' scroll-y="true" upper-threshold="50" lower-threshold="100" bindscrolltolower="scrolltolower">
+    <scroll-view class='rollbox' scroll-y="true" upper-threshold="50" bindscrolltoupper='bindrefresh'>
       <view class='loadingbox' wx:if='{{a}}'>
         <image class='loading' src='./icon1/loading.gif'></image>
       </view>
       <view class='activitybox' wx:for='{{alist}}' bindtap='preview' data-tap='{{currentTab}}' data-id='{{item._id}}'>
         <view class='aimgbox' wx:for='{{item.fileID}}'>
-          <image src='{{item}}' mode='aspectFill'></image>
+          <image lazy-load='true' src='{{item}}' mode='aspectFill'></image>
         </view>
         <view class='atitle'>{{item.title}}
+          <view class='asignup' wx:if='{{item.signup}}'>可报名</view>
           <view class='asociety'>举办组织：{{item.society}}</view>
         </view>
       </view>
+      <view class='loadingmore' bindtap='loadingmore' wx:if='{{aloading}}'>点击加载更多</view>
     </scroll-view>
   </swiper-item>
   <!--二手-->
   <swiper-item>
-    <scroll-view class='rollbox' scroll-y="true" upper-threshold="50" lower-threshold="100" bindscrolltolower="scrolltolower">
+    <scroll-view class='rollbox' scroll-y="true" upper-threshold="50" bindscrolltoupper='bindrefresh'>
       <view class='loadingbox' wx:if='{{s}}'>
         <image class='loading' src='./icon1/loading.gif'></image>
       </view>
+      <view class='secondhandbox'>
+        <view class='secondhand' wx:for='{{slist}}' bindtap='preview' data-tap='{{currentTab}}' data-id='{{item._id}}'>
+          <view class='simgbox'>
+            <image lazy-load='true' src='{{item.fileID[0]}}' mode='aspectFill'></image>
+          </view>
+          <view class='scontentbox'>
+            <view class='stag'>{{item.tag}}</view>
+            <view class='stitle'>{{item.title}}</view>
+            <view class='sprice'>代价：{{item.price}}元</view>
+          </view>
+        </view>
+      </view>
+      <view class='loadingmore' bindtap='loadingmore' wx:if='{{sloading}}'>点击加载更多</view>
     </scroll-view>
   </swiper-item>
   <!--代取-->
   <swiper-item>
-    <scroll-view class='rollbox' scroll-y="true" upper-threshold="50" lower-threshold="100" bindscrolltolower="scrolltolower">
+    <scroll-view class='rollbox' scroll-y="true" upper-threshold="50" bindscrolltoupper='bindrefresh'>
       <view class='loadingbox' wx:if='{{b}}'>
         <image class='loading' src='./icon1/loading.gif'></image>
       </view>
       <view class='expressbox' wx:for='{{blist}}'>
-      <view class='destinationbox'>
-      <image class='stage' src='./icon1/stage.png'></image>
-             <view class='destination'>{{item.destination}}</view>
+        <view class='taskbox'>
+          <view class='stand'>快递点：{{item.stand}}</view>
+          <image class='stage' src='./icon1/stage.png'></image>
+          <view class='destination'>收货点：{{item.destination}}</view>
+        </view>
+        <view class='bcontact' bindtap='bindcopy' data-contact='{{item.contact}}'>点击复制{{item.contactway}}</view>
       </view>
-          <view class='bcontact' bindtap='bindcopy' data-contact='{{item.contact}}'>点击复制{{item.contactway}}</view>
-      </view>
+      <view class='loadingmore' bindtap='loadingmore' wx:if='{{bloading}}'>点击加载更多</view>
     </scroll-view>
   </swiper-item>
   <!--egg-->
   <swiper-item>
-    <scroll-view class='rollbox' scroll-y="true" upper-threshold="50" lower-threshold="100" bindscrolltolower="scrolltolower">
-
+    <scroll-view class='rollbox' scroll-y="true" upper-threshold="50">
       <navigator id='egg' url='#'>
         <image src='../../images/prepare.png'></image>
       </navigator>

@@ -1,5 +1,6 @@
 #minebox {
   background: linear-gradient(to bottom, #f01548, #f01548 60%, #f01548 40%, #f01548 20%, #f01548 10%, white);
+  padding-bottom: 100px;
 }
 #setting {
   position: fixed;
@@ -23,56 +24,52 @@
   border-radius: 50%;
   box-shadow: 0 0 20px white;
 }
-
-#switchbox {
-  width: 750rpx;
-  padding-bottom: 40rpx;
-  color: white;
-  height: 100rpx;
-}
-
-#switchbox image {
-  width: 25px;
-  height: 25px;
-}
-
 #jmpbox {
+  margin-top: 40px;
   display: flex;
-  flex-direction: column;
-  padding: 20px 0 20px 0;
-
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 #jmpbox view {
-  display: block;
+  width: 300rpx;
   text-align: center;
-  font-weight: bold;
+  padding: 30rpx 10rpx 30rpx 10rpx;
+  margin: 10rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 0 5px white;
   color: white;
-  box-shadow: 0 0 5px white inset;
-
+  font-size: 20px;
+  font-weight: bold;
+  border:2px solid white;
 }
 #notice{
-    font-size: 15px;
-      padding: 20rpx 0 20rpx 0;
+
 }
 #activity{
-    font-size: 16px;
-   padding: 25rpx 0 25rpx 0;
+
 }
 #secondhand{
-  font-size: 17px;
-       padding:30rpx 0px 30rpx 0px;
+
 }
 #express{
-    font-size: 18px;
-      padding:40rpx 0px 40rpx 0px;
+
 }
 .helpbox {
+  position: relative;
+  top: 40px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   width: 100%;
 }
-
+.helpbox image{
+  width: 30px;
+  height: 30px;
+}
 .help {
+  font-size: 12px;
   height: 80rpx;
 }

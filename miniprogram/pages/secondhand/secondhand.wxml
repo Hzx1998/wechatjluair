@@ -1,2 +1,19 @@
 <!--pages/secondhand/secondhand.wxml-->
-<text>pages/secondhand/secondhand.wxml</text>
+<view id='secondhandbox'>
+  <view class='namebox'>
+    <view class="{{switchtap==0?'active':'deactive'}}" data-switchtap='0' bindtap='switchtap'>我发布的</view>
+    <view class="{{switchtap==1?'active':'deactive'}}" data-switchtap='1' bindtap='switchtap'>我收藏的</view>
+  </view>
+  <view id='contentbox'>
+    <view class='secondhand' bindtap='preview' data-tap='2' data-id='{{item._id}}' wx:if='{{switchtap==0}}' wx:for='{{data}}' wx:key='_id'>
+      <view class='tag'>{{item.tag}}</view>
+      <view class='title'>{{item.title}}</view>
+      <view class='deletebutton' bindtap='deletes' data-id='{{item._id}}' data-index='{{index}}'>删除</view>
+    </view>
+    <view class='secondhand' bindtap='preview' data-tap='2' data-id='{{item.sid}}' wx:if='{{switchtap==1}}' wx:for='{{collect}}' wx:key='_id'>
+      <view class='tag'>{{item.stag}}</view>
+      <view class='title'>{{item.stitle}}</view>
+            <view class='deletebutton' bindtap='deletesc' data-id='{{item._id}}' data-index='{{index}}'>删除</view>
+    </view>
+  </view>
+</view>

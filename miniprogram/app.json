@@ -1,7 +1,7 @@
 {
   "pages": [
     "pages/broadcast/broadcast",
-      "pages/mine/mine",
+    "pages/mine/mine",
     "pages/first/first",
     "pages/login/login",
     "pages/settings/settings",
@@ -13,7 +13,7 @@
     "pages/express/express"
   ],
   "window": {
-                    "navigationBarBackgroundColor": "#f01548",
+    "navigationBarBackgroundColor": "#f01548",
     "navigationBarTextStyle": "white",
     "backgroundColor": "#eeeeee",
     "backgroundTextStyle": "light",

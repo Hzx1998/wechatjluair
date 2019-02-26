@@ -10,7 +10,7 @@
 	},
 	"appid": "wx6fa2b856378d0186",
 	"projectname": "%E6%A0%A1%E5%9B%AD%E5%B0%8F%E5%B9%BF%E6%92%AD",
-	"libVersion": "2.2.5",
+	"libVersion": "2.6.0",
 	"condition": {
 		"search": {
 			"current": -1,

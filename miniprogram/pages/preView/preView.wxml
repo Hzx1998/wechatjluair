@@ -1,12 +1,60 @@
-<view  id='noticebox' wx:if='{{current==0}}'>
-<view>{{data.title}}</view>
-<view>{{data.discription}}</view>
-<view></view>
+<!--启事预览页-->
+
+<view id='noticebox' wx:if='{{current==0}}'>
+  <view class='ntitle'>{{data.title}}</view>
+  <view class='ndescription'>
+    <view>{{data.description}}</view>
+  </view>
+  <view wx:if='{{data.fileID.length>0}}' style='width:100%;font-size:10px;color:#bfbfbf;text-align:center'> ————图片详情———— </view>
+  <view class='nimgbox'>
+    <image data-url='{{data.fileID}}' data-current='{{item}}' bindtap='previewimg' mode='aspectFill' wx:for='{{data.fileID}}' src='{{item}}'></image>
+  </view>
+  <view class='ncontactbox'>
+    <view class='nwarning'>————复制联系方式可以与启事发布者取得联系————</view>
+    <view class='ncontact' bindtap='bindcopy' data-contact='{{data.contact}}'>点击复制{{data.contactway}}</view>
+  </view>
 </view>
+
+<!--活动预览页-->
+
 <view id='activitybox' wx:if='{{current==1}}'>
-2222
+  <view class='acollectbox'>
+    <image wx:if='{{!collected}}' src='{{collect}}'  bindtap='bindacollect'></image>
+    <image wx:if='{{collected}}' src='{{acollect}}'  bindtap='bindcancelac'></image>
+  </view>
+  <view class='aimgbox'>
+    <image data-url='{{data.fileID}}' data-current='{{item}}' bindtap='previewimg' mode='aspectFit' wx:for='{{data.fileID}}' src='{{item}}'></image>
+  </view>
+
+  <view class='acontentbox'>
+    <view class='atitle'>
+      <text>活动名称：</text>{{data.title}}</view>
+    <view class='asociety'>
+      <text>主办单位：</text>{{data.society}}</view>
+    <view class='adescription'>
+      <text>活动详情：</text>
+      <view>{{data.description}}</view>
+    </view>
+  </view>
+  <view class='asignup' bindtap='bindasignup' wx:if='{{data.signup&&signup&&!signedup}}'>点击报名</view>
+  <view class='asignup' wx:if='{{data.signup&&signup&&signedup}}'>您已成功报名</view>
+  <view class='asignup' wx:if='{{data.signup&&!signup}}'>报名成功仅剩{{data.numofpeople-1}}个名额</view>
+  <view class='asignup' wx:if='{{!data.signup&&signup}}'>名额已满</view>
 </view>
+<!--二手物品预览页-->
 <view id='secondhandbox' wx:if='{{current==2}}'>
-
-
+  <view class='scollectbox'>
+    <image wx:if='{{!collected}}' src='{{collect}}'  bindtap='bindscollect'></image>
+    <image wx:if='{{collected}}' src='{{acollect}}'  bindtap='bindcancelsc'></image>
+  </view>
+  <view class='sdescription'>
+    <text>商品信息：</text>
+    <view>{{data.description}}</view>
+  </view>
+  <view class='simgbox'>
+    <image class='simg{{index}}' wx:for='{{data.fileID}}' data-current='{{item}}' src='{{item}}' bindtap='previewimg' mode='aspectFill' data-url='{{data.fileID}}'></image>
+  </view>
+  <view class='sprice'>
+    <text>代价:</text>{{data.price}}元</view>
+  <view class='scontact' bindtap='bindcopy' data-contact='{{data.contact}}'>点击复制{{data.contactway}}</view>
 </view>
